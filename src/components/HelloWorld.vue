@@ -1,19 +1,34 @@
 <template>
   <h1>{{ msg }}</h1>
-  <button @click="count++">count is: {{ count }}</button>
-  <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
+  <button @click="send('TOGGLE');">
+    {{ state.matches("inactive") ? "Off" : "On" }}
+  </button>
 </template>
 
-<script>
+<script lang="ts">
+import { reactive, toRefs } from 'vue'
+import { interpret } from 'xstate';
+import { toggleMachine } from './toggleMachine';
+
 export default {
-  name: 'HelloWorld',
   props: {
     msg: String
   },
-  data() {
+  setup(props) {
+    const currentState = reactive({
+      state: toggleMachine.initialState,
+    })
+
+    const toggleService = interpret(toggleMachine)
+
+    toggleService.onTransition(state => {
+      currentState.state = state;
+    }).start();
+
     return {
-      count: 0
+      ...toRefs(currentState),
+      send: (event) => toggleService.send(event)
     }
-  }
+  },
 }
 </script>
