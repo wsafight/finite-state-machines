@@ -30,6 +30,9 @@ export default {
       },{
         name: '基础切换',
         url: '/toggle'
+      }, {
+        name: '黄绿灯转换',
+        url: '/simple'
       }] as ShowRoute[]
     }
   }
