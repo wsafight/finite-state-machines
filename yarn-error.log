@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add xstate@latest
+  /usr/local/bin/node /usr/local/bin/yarn add @xstate/vue
 
 PATH: 
   /usr/local/opt/python@2/libexec/bin:/usr/local/Cellar/gradle/3.4/libexec/bin:/usr/local/Cellar/coreutils/8.31/libexec/gnubin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/pengwang/Desktop/re-search/finite-state-machines/node_modules/.bin:/Users/pengwang/bin::/tools:/platform-tools:/usr/local/sbin:/Users/pengwang/.cabal/bin:/bin:/usr/local/opt/go/libexec/bin:/Users/pengwang/.rvm/bin:/Users/pengwang/opt/go/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/pengwang/Desktop/re-search/finite-state-machines/package.json: Unexpected string in JSON at position 204
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+  Error: https://registry.npm.taobao.org/xstate-vue: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66058:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:129541:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:130513:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:130435:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1184:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
 
 npm manifest: 
   {
@@ -30,12 +35,14 @@ npm manifest:
       "build": "vite build"
     },
     "dependencies": {
-      "vue": "^3.0.0-rc.1"
+      "vue": "^3.0.0-rc.1",
+      "vue-router": "^4.0.0-beta.13",
+      "xstate": "^4.13.0",
+      "xstate-vue": ""
     },
     "devDependencies": {
-      "x-state"
-      "vite": "^1.0.0-rc.1",
-      "@vue/compiler-sfc": "^3.0.0-rc.1"
+      "@vue/compiler-sfc": "^3.0.0-rc.1",
+      "vite": "^1.0.0-rc.1"
     }
   }
 
@@ -2060,6 +2067,11 @@ Lockfile:
       vue "^3.0.0-rc.5"
       ws "^7.2.3"
   
+  vue-router@^4.0.0-beta.13:
+    version "4.0.0-beta.13"
+    resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-beta.13.tgz?cache=0&sync_timestamp=1602076724978&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.0-beta.13.tgz#4611d09a9e44f231cc401ecc294a7f2dcb30e6a6"
+    integrity sha1-RhHQmp5E8jHMQB7MKUp/Lcsw5qY=
+  
   vue@^3.0.0-rc.1, vue@^3.0.0-rc.5:
     version "3.0.0"
     resolved "https://registry.npm.taobao.org/vue/download/vue-3.0.0.tgz?cache=0&sync_timestamp=1600441353392&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-3.0.0.tgz#cfb5df5c34efce319b113a1667d12b74dcfd9c90"
@@ -2092,6 +2104,11 @@ Lockfile:
     version "7.3.1"
     resolved "https://registry.npm.taobao.org/ws/download/ws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
     integrity sha1-0FR79n985PEqct/jEmLGjX3FUcg=
+  
+  xstate@^4.13.0:
+    version "4.13.0"
+    resolved "https://registry.npm.taobao.org/xstate/download/xstate-4.13.0.tgz#0be22ceb8bae2bc6a025fab330fe44204d76771c"
+    integrity sha1-C+Is64uuK8agJfqzMP5EIE12dxw=
   
   yallist@^3.0.2:
     version "3.1.1"

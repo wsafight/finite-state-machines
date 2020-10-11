@@ -2,7 +2,7 @@
   <div>
     <img alt="Vue logo" src="./assets/logo.png"/>
     <div>
-      <span v-for="route in routes" :key="route.name">
+      <span style="margin: 0 10px" v-for="route in routes" :key="route.name">
         <router-link :to="route.url">
         {{ route.name }}
      </router-link>
@@ -15,8 +15,6 @@
 </template>
 
 <script lang="ts">
-import { reactive, toRefs } from "vue";
-
 
 interface ShowRoute {
   name: string;
@@ -26,9 +24,12 @@ interface ShowRoute {
 export default {
   setup() {
     return {
-      routes: [{
-        name: '基础切换',
+      routes: [ {
+        name: '介绍测试',
         url: '/'
+      },{
+        name: '基础切换',
+        url: '/toggle'
       }] as ShowRoute[]
     }
   }
